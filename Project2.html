@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Project2 Budget Zoom</title>
+<head>
+<link rel="stylesheet" type="text/css" href="P2.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="Budget, Zoom">
+</head>
+
+<body>
+
+<div class="topnav">
+   <a href="Project2.html"id="top">Homepage</a>
+</div>
+
+ <br>
+    <h1 class = "first">Budget Zoom</h1>
+    <p class = "a">Sort your finances<i> fast.</i></p>
+    <p class="b">Use this tool to become the master of your budget. This tool offers preset categories that allow the you to start your budget right away! Start Below!</p>
+
+<!--     <p class="b"><input type="Submit" id="Get started" value="Get started"></p><br> -->
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "monthlyincome.txt", true);
+  xhttp.send();
+}
+</script>
+
+
+<br>
+   <p class="a">Monthly Income</p>
+   <p class="b">Total Monthly Income <input type="text" name="Income" id="Income"><br>
+<br>
+   <p class="a">Monthly Expenses</p>
+   <p class="b">Tithing/Charitable donations <input type="text" name="Tithing" id="Tithing"><br>
+   <p class="b">Mortgage/Rent <input type="text" name="Mortgage" id="Mortgage"><br>
+   <p class="b">Utilities (Water, Gas & Electric) <input type="text" name="Utilities" id="Utilities"><br>
+   <p class="b">Trash <input type="text" name="Trash" id="Trash"><br>
+   <p class="b">Phone <input type="text" name="Phone" id="Phone"><br>
+   <p class="b">Internet <input type="text" name="Internet" id="Internet"><br>
+   <p class="b">Car Payment <input type="text" name="Car" id="Car"><br>
+   <p class="b">Gas (for car) <input type="text" name="Gas" id="Gas"><br>
+   <p class="b">Car Maintenance <input type="text" name="Maintenance" id="Maintenance"><br>
+   <p class="b">Food <input type="text" name="Food" id="Food"><br>
+   <p class="b">Clothing <input type="text" name="Clothing" id="Clothing"><br>
+   <p class="b">Credit Card <input type="text" name="Credit" id="Credit"><br>
+   <p class="b">Misc. <input type="text" name="Misc" id="Misc"><br>
+<br>
+   <p class="a"> Balance </p>
+   <input type="Submit" id="Calculate" value="Calculate"><br>
+<!-- End Page Content -->
+</div>
+
+<!-- Footer -->
+<footer class = "footer">
+  <p class = "a"><a href="#top">Return to Top</a></p>
+</footer>
+
+</body>
+</html>
